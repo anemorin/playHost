@@ -28,7 +28,8 @@ namespace Itis.Playhost.Api.Core.Requests.SubscriptionRequests.GetSubscriptions
 			if (request == null)
 				throw new ArgumentNullException(nameof(request));
 
-			var query = _dbContext.Subscriptions;
+			var query = _dbContext.Subscriptions
+				.Where(x => x.UserId == request.UserId);
 
 			var count = await query.CountAsync(cancellationToken);
 

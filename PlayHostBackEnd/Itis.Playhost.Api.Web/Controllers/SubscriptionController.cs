@@ -1,10 +1,12 @@
 using Itis.Playhost.Api.Contracts.Requests.SubscriptionRequests.ExtendSubsriptionSubscription;
 using Itis.Playhost.Api.Contracts.Requests.SubscriptionRequests.GetSubscriptions;
 using Itis.Playhost.Api.Contracts.Requests.SubscriptionRequests.PostSubscription;
+using Itis.Playhost.Api.Core.Constants;
 using Itis.Playhost.Api.Core.Requests.SubscriptionRequests.DeleteSubscription;
 using Itis.Playhost.Api.Core.Requests.SubscriptionRequests.ExtendSubsriptionSubscription;
 using Itis.Playhost.Api.Core.Requests.SubscriptionRequests.GetSubscriptions;
 using Itis.Playhost.Api.Core.Requests.SubscriptionRequests.PostSubscription;
+using Itis.Playhost.Api.Web.Attributes;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,14 +25,15 @@ namespace Itis.Playhost.Api.Web.Controllers
 		/// <param name="cancellationToken">Токен отмены запроса</param>
 		/// <returns>Список сущностей</returns>
 		[HttpGet]
+		[Policy(PolicyConstants.IsDefaultUser)]
 		public async Task<GetSubscriptionsResponse> GetAsync(
 			[FromServices] IMediator mediator,
 			[FromQuery] GetSubscriptionsRequest request,
 			CancellationToken cancellationToken) =>
 			await mediator.Send(
 				request == null
-					? new GetSubscriptionsQuery()
-					: new GetSubscriptionsQuery
+					? new GetSubscriptionsQuery(CurrentUserId)
+					: new GetSubscriptionsQuery(CurrentUserId)
 					{
 						PageNumber = request.PageNumber,
 						PageSize = request.PageSize,
