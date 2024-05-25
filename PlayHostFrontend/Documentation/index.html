@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Playhost React Documentation</title>
+
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="bg-color">
+        	<div class="row">
+            	<div class="col-md-3">
+            	  <h1 class="title">Playhost</h1>
+           	  </div>
+                <div class="col-md-7">Thank you for purchasing our Template. If you have any questions that are beyond the scope of this help file, please feel free to ask via item's comments. Also please don't forget to give item ratings! Thanks so much! :)
+</div>
+                <div class="col-md-2 text-right"><a class="btn btn-primary mt15" href="https://themeforest.net/user/on3stepthemes">View All Our Items</a></div>
+            </div>
+    </section>
+
+    <section>
+		<h2>Getting Started</h2>
+
+		<div class="expand">
+			<div class="title">How to Install</div>
+			<div class="content">
+			<ol class="alpha">
+			  <li>
+          <strong>Node.js and NPM :</strong> You can download Node.js from <a href="https://nodejs.org" target="_blank">https://nodejs.org.</a> please use Recommended For Most Users <a href="https://nodejs.org/dist/v20.10.0/node-v20.10.0-x64.msi" target="_blank">20.10.0 LTS</a> NPM comes bundled with Node.js.
+        </li>
+			  <li>
+          <strong>NPM :</strong> You must have to npm install packages. You can do this by running <strong>npm install</strong> from the root of your project to install all the necessary dependencies.
+          <p>Open a terminal(Windows Command Prompt or PowerShell).</p>
+          <img src="img/install.png" alt="img"> 
+        </li>
+			  <li><strong>Run <i>npm start</i></strong> for a dev server. Navigate to http://localhost:3000/ . The app will automatically reload if you change any of the source files.</li>
+			  <li><strong>Run <i>npm run build</i></strong> to build the project. The build artifacts will be stored in the build/ directory. Use the npm run build --prod flag for a production build.</li>
+			</ol>
+			</div>
+		</div>
+
+    <div class="expand">
+        <div class="title">If not work using NPM try using Yarn</div>
+        <div class="content">
+
+        <ol class="alpha">
+          <li>add <strong>SKIP_PREFLIGHT_CHECK=true</strong> in file .env</li>
+          <li>Remove node module command <strong>rm -rf node_modules</strong></li>
+          <li>Delete <strong>package-lock.json</strong></li>
+          <li>Install Yarn <a href="https://yarnpkg.com/en/docs/install" target="_blank">( https://yarnpkg.com/en/docs/install ).</a></li>
+          <li>Run <strong>yarn install</strong></li>
+          <li>Run <strong>yarn run start from the folder</strong></li>
+        </ol>
+
+      </div>
+    </div>
+
+		<div class="expand">
+			<div class="title">Structure Template</div>
+
+			<div class="content">
+				<pre>
+
+				Playhost 
+				// root folder
+				+
+				template
+				├───public
+				│       ├───images --all images files
+				└───src
+				│  ├───index.js --set path plugin / icon here
+				│  │───main.js	--set path router here
+				│  │   │        ├─── section-pages --all components slider,  carousel, gallery, footer, table etc
+				│  │   │        ├─── layout --set navigatin link, change logo, and totop button here
+				│  │   │        ├─── pages --custom all pages here
+				│  │   ├───assets       
+				│  │   │   └───style.scss -- main css here
+                                            └───color.css --main coloring
+                                            └───aos.css --aos animation 
+                                            └───animated.css --main animation 
+				   
+				+
+				</pre>
+			</div>
+
+		</div>
+
+		<div class="expand">
+			<div class="title">Header Structure How to change Logo and Menu</div>
+			<div class="content">
+        <h2 class="root">Root folder 
+          <strong>src/layout/Navbar.jsx</strong>
+        </h2>
+        <h3>change logo</h3>
+        <img src="img/header.png" alt="img"> 
+        <h3 class="mt15">Menu Mobile</h3>
+        <img src="img/header1.png" alt="img"> 
+        <h3 class="mt15">Menu Dekstop</h3>
+        <img src="img/header2.png" alt="img"> 
+			</div>
+		</div>
+
+    <div class="expand">
+      <div class="title">Routing</div>
+      <div class="content">
+        <h2 class="root">Root folder <strong>src/main.js</strong></h2>
+        <img src="img/routing.png" alt="img"> 
+      </div>
+    </div>
+
+
+		<div class="expand">
+			<div class="title">Footer How to change Copyright ?</div>
+			<div class="content">
+				<h2 class="root">Root folder <strong>src/section-pages/footer.js</strong></h2>
+        <img src="img/footer.png" alt="img"> 
+			</div>
+		</div>
+
+	</section>
+
+	</section>
+    
+    <section>
+		<h2>Basics</h2>
+		
+		<div class="expand">
+			<div class="title">Create Columns</div>
+			<div class="content">
+            <p>For a simple two column layout, create a <strong>.row</strong> and add the appropriate number of <strong>.col-md-*</strong> columns. As this is a 12-column grid, each <strong>.col-md-*</strong> spans a number of those 12 columns, and should always add up to 12 for each row (or the number of columns in the parent).</p>
+			
+			<p>Please read more for <a href="https://getbootstrap.com/docs/5.1/layout/grid/" target="_blank">Bootstrap grid system 5.1.1</a></p>
+			
+      <pre>&lt;div className=&quot;<strong>row</strong>&quot;&gt;<br>     &lt;div className=&quot;<strong>col-md-6</strong>&quot;&gt; this is 1/2 columns &lt;/div&gt;<br>     &lt;div className=&quot;<strong>col-md-6</strong>&quot;&gt; this is 1/2 columns &lt;/div&gt;<br>&lt;/div&gt;
+
+&lt;div className=&quot;<strong>row</strong>&quot;&gt;<br>     &lt;div className=&quot;<strong>col-md-4</strong>&quot;&gt; this is 1/3 columns &lt;/div&gt;<br>     &lt;div className=&quot;<strong>col-md-8</strong>&quot;&gt; this is 2/3 columns &lt;/div&gt;<br>&lt;/div&gt;
+
+&lt;div className=&quot;<strong>row</strong>&quot;&gt;<br>     &lt;div className=&quot;<strong>col-md-3</strong>&quot;&gt; this is 1/4 columns &lt;/div&gt;<br>     &lt;div className=&quot;<strong>col-md-9</strong>&quot;&gt; this is 3/4 columns &lt;/div&gt;<br>&lt;/div&gt;</pre>
+
+			</div>
+		</div>
+
+
+		<div class="expand">
+        <div class="title">Animate object on scroll</div>
+        <div class="content">
+          <!-- HTML generated using hilite.me -->
+          <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="font-weight: bold">import</span> React from <span style="font-style: italic">&#39;react&#39;</span>;
+<span style="font-weight: bold">import</span> AOS from <span style="font-style: italic">&#39;aos&#39;</span>;
+
+AOS.init({
+  offset: 200,
+  duration: 800,
+  easing: <span style="font-style: italic">&#39;ease-in-out-sine&#39;</span>,
+  delay: 200,
+  mirror: <span style="font-weight: bold">true</span>
+});
+
+
+&lt;div data-aos=<span style="font-style: italic">&quot;fade-up&quot;</span>
+    data-aos-delay=<span style="font-style: italic">&quot;0&quot;</span>
+    data-aos-duration=<span style="font-style: italic">&quot;1000&quot;</span>
+    data-aos-easing=<span style="font-style: italic">&quot;ease&quot;</span>
+    data-aos-once=<span style="font-style: italic">&quot;true&quot;</span>&gt;
+    Lorep Ipsum
+&lt;<span style="border: 1px solid #FF0000">/div&gt;</span>
+</pre>
+          </div>
+
+
+
+        </div>
+      </div>
+		
+		
+        
+	</section>
+    
+	    
+	<section>
+		<h2>SCSS Files</h2>
+	
+		<div class="expand">
+        <div class="title">List of CSS files</div>
+        <div class="content">
+<pre style="margin: 0; line-height: 125%"><span style="color: #333333">/*</span> <span style="color: #333333">======================*/</span>
+
+<span style="color: #333333">/*</span> Playhost
+<span style="color: #333333">/*</span> created by on3step
+
+
+Table of content:
+
+<span style="color: #333333">*</span> font
+<span style="color: #333333">*</span> color
+<span style="color: #333333">*</span> general
+<span style="color: #333333">*</span> margin padding
+<span style="color: #333333">*</span> preloader
+<span style="color: #333333">*</span> main section
+<span style="color: #333333">*</span> header
+<span style="color: #333333">*</span> dropdown
+<span style="color: #333333">*</span> swiper slider
+<span style="color: #333333">*</span> smallswiper
+<span style="color: #333333">*</span> home static
+<span style="color: #333333">*</span> home static video
+<span style="color: #333333">*</span> testimonial
+<span style="color: #333333">*</span> server
+<span style="color: #333333">*</span> collection
+<span style="color: #333333">*</span> accordion
+<span style="color: #333333">*</span> location <span style="color: #007020">map</span>
+<span style="color: #333333">*</span> marquee
+<span style="color: #333333">*</span> pricelist
+<span style="color: #333333">*</span> de_pricing<span style="color: #333333">-</span>table
+<span style="color: #333333">*</span> blog <span style="color: #007020">list</span>
+<span style="color: #333333">*</span> pagination <span style="color: #007020">list</span>
+<span style="color: #333333">*</span> to top
+<span style="color: #333333">*</span> knowledge
+<span style="color: #333333">*</span> footer section
+<span style="color: #333333">*</span> contact
+<span style="color: #333333">*</span> login
+<span style="color: #333333">*</span> media query
+<span style="color: #333333">*/</span>
+
+<span style="color: #333333">/*</span> <span style="color: #333333">======================*/</span>
+</pre>
+
+
+
+        </div>
+      </div>
+		
+	</section>
+
+</div>
+	
+</body>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/easing.js"></script>
+    <script src="js/custom.js"></script>
+
+</html>
