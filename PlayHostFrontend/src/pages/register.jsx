@@ -82,7 +82,7 @@ const Home = () => {
                         repeatPassword: "",
                       }}
                       onSubmit={async (values, { setSubmitting }) => {
-                        const error = await userStore.Registrations(
+                        const response = await userStore.Registrations(
                           values.firstName,
                           values.lastName,
                           values.role,
@@ -90,7 +90,7 @@ const Home = () => {
                           values.email,
                           values.password
                         );
-                        if (!error.length && userStore.token.length !== 0) {
+                        if (!error) {
                           navigate("/");
                           setSubmitting(false);
                         } else {

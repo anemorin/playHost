@@ -16,6 +16,7 @@ import Register from "../src/pages/register";
 import UseStores from "./hooks/useStores";
 import Profile from "./pages/profile";
 import Cards from "./section-pages/Cards";
+import UndefinedPage from "./pages/404";
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -32,6 +33,7 @@ const routes = [
   { path: "/register", element: <Register /> },
   { path: "/profile", element: <Profile /> },
   { path: "/order", element: <Cards /> },
+  { path: "/*", element: <UndefinedPage />}
 ];
 
 const Navigation = () => {

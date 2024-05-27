@@ -41,7 +41,7 @@ const Section = () => {
                   <div
                     className="post-content"
                     style={{
-                      width: "280px",
+                      // width: "280px",
                       height: "300px",
                     }}
                   >
@@ -58,8 +58,10 @@ const Section = () => {
                         justifyContent: "space-between",
                       }}
                     >
-                      <h4>{post.title}</h4>
-                      <div className="d-date">{post.text}</div>
+                      <div>
+                        <h4>{post.title}</h4>
+                        <div className="d-date">{post.text}</div>
+                      </div>
                       <p>{dayjs(post.createdAt).format("DD/MM/YYYY")}</p>
                     </div>
                   </div>

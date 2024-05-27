@@ -36,10 +36,13 @@ const Subscriptions = () => {
       }
     };
     initialFetch();
+  }, []);
+
+  useEffect(() => {
     setTotalPages(
       Math.ceil(subscriptionsStore.subscriptionsTotalCount / postsPerPage)
     );
-  }, []);
+  }, [subscriptionsStore.subscriptionsTotalCount])
 
   useEffect(() => {
     const initialFetch = async (currentPage) => {
@@ -68,6 +71,7 @@ const Subscriptions = () => {
     if (currentPage > totalPages) {
       setCurrentPage(totalPages);
     }
+    console.warn(totalPages)
   }, [totalPages]);
 
   return (
@@ -179,7 +183,7 @@ const Subscriptions = () => {
                 </Link>
               </li>
             ))}
-            {currentPage < totalPages && (
+            {Math.max(currentPage, 1) < Math.max(totalPages, 1) && (
               <li>
                 <Link
                   to=""

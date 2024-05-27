@@ -32,14 +32,14 @@ class UserStore {
 
   async SignIn(username, password) {
     try {
+
       const response = await AuthServices.Login(username, password);
-      if (response.data.jwtToken) {
+      if (response.data.jwtToken && response.data.result.succeeded === true) {
         localStorage.setItem("PlayHostToken", response.data.jwtToken);
         this.token = response.data.jwtToken;
-      } else if (response.status === "404") {
-        return "Пользователь не найден";
+        return '';
       } else {
-        return "Ошибка, неверный логин или пароль";
+        return "Ошибка, неверный логин или пароль"
       }
     } catch (error) {
       console.log(error);

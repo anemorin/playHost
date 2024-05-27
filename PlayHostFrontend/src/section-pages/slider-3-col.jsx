@@ -49,7 +49,7 @@ const Customerreviews = () => {
           }}
           centeredSlides
           loop
-          slideToClickedSlide
+          // slideToClickedSlide
           onInit={async (swiper) => {
             await gamesStore.getGames();
             swiper.update();

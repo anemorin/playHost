@@ -15,14 +15,15 @@ const TextInput = ({
   return (
     <div
       hasError={meta.touched && !!meta.error}
-      style={{ marginBottom: "10px" }}
+      style={{ marginBottom: "10px", }}
     >
       <label htmlFor={props.id || props.name}>{label}</label>
       <input
+        style={{backgroundColor: "rgba(70, 90, 126, 0.4) !important",}}
         {...field}
         {...props}
         disabled={isDisabled}
-        type="text"
+        type={type ??"text"}
         className="form-control"
       />
       {meta.touched && meta.error && (

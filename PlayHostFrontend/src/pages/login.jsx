@@ -83,6 +83,7 @@ export default function Home() {
                           values.email,
                           values.password
                         );
+                        console.warn(!error.length)
                         if (!error.length) {
                           navigate("/");
                           setSubmitting(false);
